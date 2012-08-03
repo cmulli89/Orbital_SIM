@@ -68,3 +68,7 @@ void SpaceObject::calculateOrbit(const Planet& planet, char* filename)
 	myfile.close();
 }
 
+double SpaceObject::calculateEscapeVelocity(const Planet& planet)
+{
+	return sqrt(2.0 * planet.getGravitationalParam() / (mRadialLocation + planet.getRadius()));
+}

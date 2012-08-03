@@ -30,10 +30,10 @@ public:
     void generatePlanetPlotData();
 
 private:
-	double mMass;                      /// (kg)       Mass of planet
+	double mMass;                      /// (kg)      Mass of planet
     std::vector<double> mPosition;     /// (m)       Location of center of planet
 	double mRadius;                    /// (m)       Mean radius of planet
-	const double mGravitationalParam;  /// (m^3/s^2) GM =~ G(M+m), planatary constant
+	const double mGravitationalParam;  /// (m^3/s^2) GM =~ G(M+m), planetary constant
 	std::vector<double> cartesianLocation;
 	CoordinateConversions coordConv;
 	std::ofstream myfile;  ///Declares operator for output file functions
