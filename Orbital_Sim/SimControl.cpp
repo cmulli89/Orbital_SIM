@@ -6,6 +6,7 @@
  */
 
 #include "SimControl.h"
+#include <iostream>
 
 SimControl::SimControl()
 	:
@@ -14,7 +15,7 @@ SimControl::SimControl()
 	 * create ship
 	*/
 	earth(5.972E24, 6378145.0, 3.986005E14),
-	satelite(8500.0, 250000.0, 89 , 200)
+	satelite(7754.84, 250000.0, 89 , 200)
 {
 	// TODO Auto-generated constructor stub
 
@@ -39,6 +40,9 @@ void SimControl::update()
 {
 	earth.generatePlanetPlotData();
 	satelite.calculateOrbit(earth, "Orbital_Sim/orbitTest.txt");
+	satelite.setVelocity(14967);
+	satelite.calculateOrbit(earth, "Orbital_Sim/orbitTestTwo.txt");
+	std::cout<<satelite.calculateEscapeVelocity(earth)<<std::endl;
 }
 
 void SimControl::executeSimulation()

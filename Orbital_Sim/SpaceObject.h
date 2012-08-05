@@ -60,6 +60,26 @@ public:
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	void calculateOrbit(const Planet& planet, char* filename);
 
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @brief This function sets the velocity of the object.
+	///
+	/// @param[in] velocity   (m/s) New velocity of the space object.
+	///
+	/// @return void
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	void setVelocity(const double velocity)
+	{
+		mVelocity = velocity;
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// @brief This function calculates the velocity the object would need to escape its current orbit and
+	///        launch on to a parabolic trajectory.
+	///
+	/// @return escapeVelocity (m/s) Velocity needed to escape current orbit.
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	double calculateEscapeVelocity(const Planet& planet);
+
 private:
 	double mVelocity;          /// (m/s) Velocity of object
 	double mRadialLocation;    /// (m)   Location of object from surface of planet
@@ -68,6 +88,7 @@ private:
 	double semiMajorAxis;      /// (m)   Half of the major orbit axis
 	double eccentricity;       /// (--)  Variable that describes shape of orbit
 	double numberOfIncrements; /// (--)  Number of increments for generating orbit
+	double escapeVelocity;     /// (m/s) Velocity required so KE = gravitational Force
 	std::vector<double> cartesianLocation;
 	CoordinateConversions coordConv;
 	std::ofstream myfile;  ///Declares operator for output file functions
