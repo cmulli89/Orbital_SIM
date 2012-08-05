@@ -49,7 +49,7 @@ void SpaceObject::calculateEccentricity(const Planet& planet)
 			pow(cos(PI/180 * mZenithAngle),2) );
 }
 
-void SpaceObject::calculateOrbit(const Planet& planet, char* filename)
+void SpaceObject::calculateOrbit(const Planet& planet, const char* filename)
 {
 	myfile.open(filename);
 	double theta = 0.0;

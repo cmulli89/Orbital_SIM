@@ -51,3 +51,8 @@ void SimControl::executeSimulation()
 	update();
 }
 
+void SimControl::plot()
+{
+
+}
+

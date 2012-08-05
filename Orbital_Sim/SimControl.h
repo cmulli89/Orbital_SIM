@@ -9,6 +9,9 @@
 #define SIMCONTROL_H_
 
 #include "SpaceObject.h"
+//#include <Python.h>
+
+// TRYING TO INGRATE PYTHON INTO C++ CODE UNDER PLOT()
 
 class SimControl {
 public:
@@ -20,6 +23,7 @@ public:
 private:
 	void initialize();
 	void update();
+	void plot();
 
 	Planet earth;
 	SpaceObject satelite;
