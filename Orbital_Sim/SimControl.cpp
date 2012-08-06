@@ -42,7 +42,8 @@ void SimControl::update()
 	satelite.calculateOrbit(earth, "Orbital_Sim/orbitTest.txt");
 	satelite.setVelocity(14967);
 	satelite.calculateOrbit(earth, "Orbital_Sim/orbitTestTwo.txt");
-	std::cout<<satelite.calculateEscapeVelocity(earth)<<std::endl;
+	std::cout<<"Escape Velocity = "<<satelite.calculateEscapeVelocity(earth)<<std::endl;
+	plot();
 }
 
 void SimControl::executeSimulation()
@@ -53,6 +54,7 @@ void SimControl::executeSimulation()
 
 void SimControl::plot()
 {
-
+	//Path is specific to location of SIM files on current computer.
+	system("python ~/Orbital_SIM/Workspace/Orbital_Sim/makePlots.py");
 }
 
