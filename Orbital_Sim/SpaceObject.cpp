@@ -10,6 +10,7 @@
 #include <iostream> //kludge
 
 SpaceObject::SpaceObject():
+	mInitialVelocity(0.0),
 	mVelocity(0.0),
 	mRadialLocation(0.0),
 	mZenithAngle(0.0),

@@ -81,6 +81,7 @@ public:
 	double calculateEscapeVelocity(const Planet& planet);
 
 private:
+	double mInitialVelocity;   /// (m/s) Initial Velocity of the object
 	double mVelocity;          /// (m/s) Velocity of object
 	double mRadialLocation;    /// (m)   Location of object from surface of planet
 	double mZenithAngle;       /// (deg) Angle between pos and vel vectors
