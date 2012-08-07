@@ -7,15 +7,10 @@
 
 #include "SimControl.h"
 #include <iostream>
+#include <cstdlib>
 
-SimControl::SimControl()
-	:
-	/*
-	 * create earth
-	 * create ship
-	*/
-	earth(5.972E24, 6378145.0, 3.986005E14),
-	satelite(7754.84, 250000.0, 89 , 200)
+SimControl::SimControl():
+	simVar()
 {
 	// TODO Auto-generated constructor stub
 
@@ -27,22 +22,16 @@ SimControl::~SimControl() {
 
 void SimControl::initialize()
 {
-	/*
-	 * create earth
-	 * create ship
-	 * open/create files
-	 *
-	 */
-	earth.setPosition(0.0, 0.0);
+	//Nothing to do here
 }
 
 void SimControl::update()
 {
-	earth.generatePlanetPlotData();
-	satelite.calculateOrbit(earth, "Orbital_Sim/orbitTest.txt");
-	satelite.setVelocity(14967);
-	satelite.calculateOrbit(earth, "Orbital_Sim/orbitTestTwo.txt");
-	std::cout<<"Escape Velocity = "<<satelite.calculateEscapeVelocity(earth)<<std::endl;
+	simVar.earth.generatePlanetPlotData();
+	simVar.satelite.calculateOrbit(simVar.earth, "Orbital_Sim/orbitTest.txt");
+	simVar.satelite.setVelocity(14967);
+	simVar.satelite.calculateOrbit(simVar.earth, "Orbital_Sim/orbitTestTwo.txt");
+	std::cout<<"Escape Velocity = "<<simVar.satelite.calculateEscapeVelocity(simVar.earth)<<std::endl;
 	plot();
 }
 
@@ -55,6 +44,10 @@ void SimControl::executeSimulation()
 void SimControl::plot()
 {
 	//Path is specific to location of SIM files on current computer.
-	system("python ~/Orbital_SIM/Workspace/Orbital_Sim/makePlots.py");
+
+	//Work Set
+	//system("python ~/Orbital_SIM/Workspace/Orbital_Sim/makePlots.py");
+	//Home Set
+	system("python ~/workspace/Orbital_SIM/Orbital_Sim/makePlots.py");
 }
 
