@@ -1,0 +1,14 @@
+- Use factory design for planets, projectiles, and engines, etc. (Possibly, may be overkill)
+- need integration method
+- need update, init
+- possibly use facade design to create interface class.
+
+http://www.braeunig.us/space/orbmech.htm
+
+========= PHASE 2 Design ===============
+Useful Links:
+http://www.math.utexas.edu/users/jjames/hw4Notes.pdf
+http://www.scholarpedia.org/article/Space_Manifold_dynamics
+http://ccar.colorado.edu/asen5519/imd/documents/CRTBP_Handout.pdf
+
+/users/rprentic/Matlab/School/Fall 09/Orbital Mechanics
